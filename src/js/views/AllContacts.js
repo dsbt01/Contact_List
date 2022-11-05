@@ -15,10 +15,10 @@ export const AllContacts = () => {
     <div>
       <div>
         <div className="row">
-          <div>
-            <h4 className="">All Contacts</h4>
+          <div className="col-10">
+            <p className="headerText">All Contacts</p>
           </div>
-          <div className="ml-auto">
+          <div className="col-2">
             <p>
               <Link to="/add">
                 <button type="button" className="btn btn-success">
@@ -36,8 +36,6 @@ export const AllContacts = () => {
           aria-expanded="true"
         >
           <ul className="list-group pull-down" id="contact-list">
-            <ContactCard />
-            <ContactCard />
             <ContactCard />
             <ContactCard />
           </ul>
