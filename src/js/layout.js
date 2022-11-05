@@ -11,6 +11,8 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { AllContacts } from "./views/AllContacts";
 
+import { AddContact } from "./views/AddContact";
+
 
 //create your first component
 const Layout = () => {
@@ -32,6 +34,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/allcontacts">
 							<AllContacts />
+						</Route>
+						<Route exact path="/add">
+							<AddContact />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
