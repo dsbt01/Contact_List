@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
-import "../../styles/AllContacs.css";
+import "../../styles/AllContacts.css";
 
 import ContactCard from "./ContactCard.js";
 import AddContact from "./AddContact.js";
