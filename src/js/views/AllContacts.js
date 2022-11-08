@@ -36,8 +36,7 @@ export const AllContacts = () => {
           aria-expanded="true"
         >
           <ul className="list-group pull-down" id="contact-list">
-            <ContactCard />
-            <ContactCard />
+            
           </ul>
         </div>
       </div>

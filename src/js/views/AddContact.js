@@ -41,7 +41,10 @@ export const AddContact = () => {
               placeholder="Enter address"
             />
           </div>
-          <button type="button" className="btn btn-primary form-control mb-3 mt-3">
+          <button
+            type="button"
+            className="btn btn-primary form-control mb-3 mt-3"
+          >
             save
           </button>
           <Link to="/allcontacts">
