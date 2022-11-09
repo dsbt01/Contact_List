@@ -85,9 +85,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       createNewContact: async (data) => {
         //first load the data from the API into the store array
         var resp = postData(baseUrl, data);
-
-        //then refresh the screen
-        getActions().refreshData();
       },
 
       refreshData: async () => {
