@@ -9,20 +9,25 @@ export const AddContact = () => {
   const [phoneValue, setPhoneValue] = useState("");
   const [addressValue, setAddressValue] = useState("");
 
+  const { store, actions } = useContext(Context);
+
   const saveNewContact = () => {
     const newContact = {
-      fullName: fullNameValue,
+      full_name: fullNameValue,
       email: emailValue,
       phone: phoneValue,
       address: addressValue,
+      agenda_slug: "DSBT",
     };
 
-    Context.contacts.push(newContact);
+    actions.createNewContact(newContact);
 
     setFullNameValue("");
     setEmailValue("");
     setPhoneValue("");
     setAddressValue("");
+
+    alert("New contact has been created successfully");
   };
 
   return (

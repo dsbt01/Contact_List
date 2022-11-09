@@ -10,6 +10,9 @@ async function get(url) {
 //generic post call
 async function postData(url = "", data = {}) {
   // Default options are marked with *
+  console.log("Inside postData url", url);
+  console.log("Inside postData data", data);
+
   const response = await fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
@@ -83,8 +86,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       createNewContact: async (data) => {
-        //first load the data from the API into the store array
-        var resp = postData(baseUrl, data);
+        console.log("Inside createNeContact", data);
+        var resp = await postData(baseUrl, data);
       },
 
       refreshData: async () => {
