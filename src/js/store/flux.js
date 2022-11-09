@@ -79,22 +79,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
-      contacts: [],
+      contacts: [{}],
     },
     actions: {
-      loadDataFromApi: async () => {
-        //get the store
-        const store = getStore();
-
-        //build the url to get all the contacts for the DSBT agenda
-        var data = await get(baseUrl + "agenda/DSBT");
-
-        //debug the values downloaded
-        console.log("🚀 ~ file: flux.js ~ line 34 ~ refreshData: ~ data", data);
-
-        //update the store array
-        setStore({ contacts: data });
-      },
       createNewContact: async (data) => {
         //first load the data from the API into the store array
         var resp = postData(baseUrl, data);
@@ -104,13 +91,20 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       refreshData: async () => {
-        console.log("Inside refreshData");
+        //get the store
+        const store = getStore();
 
-        //first load the data from the API into the store array
-        getActions().loadDataFromApi();
+        //first load the data from the API
+        //build the url to get all the contacts for the DSBT agenda
+        var data = await get(baseUrl + "agenda/DSBT");
 
-        //then refresh the screen
-        for (var i = 0; i < store.contacts.length; i++) {}
+        //debug the values downloaded
+        console.log(data);
+
+        //update the store array
+        setStore({ contacts: data });
+
+        console.log("After", store.contacts);
       },
 
       // Use getActions to call a function within a function

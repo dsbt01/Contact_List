@@ -5,8 +5,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/AllContacts.css";
 
-import ContactCard from "./ContactCard.js";
-import AddContact from "./AddContact.js";
+import Contacts from "./contacts.js";
 
 export const AllContacts = () => {
   const { store, actions } = useContext(Context);
@@ -29,17 +28,7 @@ export const AllContacts = () => {
           </div>
         </div>
       </div>
-      <div className="row">
-        <div
-          id="contacts"
-          className="panel-collapse collapse show"
-          aria-expanded="true"
-        >
-          <ul className="list-group pull-down" id="contact-list">
-            
-          </ul>
-        </div>
-      </div>
+      <Contacts />
     </div>
   );
 };
