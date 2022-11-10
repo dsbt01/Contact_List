@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
@@ -39,9 +40,11 @@ const Contacts = () => {
                   </label>
                 </div>
                 <div className="col-3">
-                  <button className="btn">
-                    <i className="fas fa-pencil-alt mr-3"></i>
-                  </button>
+                  <Link to={"/edit/" + items.id}>
+                    <button className="btn">
+                      <i className="fas fa-pencil-alt mr-3"></i>
+                    </button>
+                  </Link>
                   <button
                     className="btn"
                     onClick={() => deleteContact(items.id)}
