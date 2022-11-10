@@ -9,8 +9,6 @@ const Contacts = () => {
   var locContacts = store.contacts;
 
   return locContacts.map((items, index) => {
-    console.log("see items", items);
-
     return (
       <li className="list-group-item" id={items.id}>
         <div className="row w-100">
