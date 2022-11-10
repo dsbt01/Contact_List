@@ -8,8 +8,6 @@ import "../../styles/AllContacts.css";
 import Contacts from "./contacts.js";
 
 export const AllContacts = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <div>
       <div>

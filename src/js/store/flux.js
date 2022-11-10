@@ -83,6 +83,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       createNewContact: async (data) => {
+        const store = getStore();
+
         console.log("Inside createNeContact", data);
         var resp = await postData(baseUrl, data);
       },
