@@ -82,11 +82,17 @@ const getState = ({ getStore, getActions, setStore }) => {
       contacts: [{}],
     },
     actions: {
+      deleteContact: async (data) => {
+        const store = getStore();
+        var resp = await deleteData(baseUrl + data, data);
+
+        getActions().refreshData();
+      },
       createNewContact: async (data) => {
         const store = getStore();
-
-        console.log("Inside createNeContact", data);
         var resp = await postData(baseUrl, data);
+
+        getActions().refreshData();
       },
 
       refreshData: async () => {
@@ -97,13 +103,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         //build the url to get all the contacts for the DSBT agenda
         var data = await get(baseUrl + "agenda/DSBT");
 
-        //debug the values downloaded
-        console.log("Data from store", data);
-
         //update the store array
         setStore({ contacts: data });
-
-        console.log("After", store.contacts);
       },
 
       // Use getActions to call a function within a function
