@@ -27,7 +27,7 @@ const Contacts = () => {
       }
 
       return (
-        <li key={items.id} className="list-group-item">
+        <li key={items.id} className="list-group-item list-group-item-primary">
           <div className="row w-100">
             <div className="col-12 col-sm-6 col-md-3 px-0">
               <img
@@ -36,7 +36,7 @@ const Contacts = () => {
                 className="rounded-circle mx-auto d-block img-fluid"
               />
             </div>
-            <div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+            <div className="col-12 col-sm-6 col-md-9 text-left text-sm-left">
               <div className="row">
                 <div className="col-9">
                   <label className="w-100">
@@ -57,9 +57,8 @@ const Contacts = () => {
                   </button>
                 </div>
               </div>
-              <br />
               <i className="fas fa-map-marker-alt text-muted mr-3"></i>
-              <span className="text-muted">{items.address}</span>
+              <span className="text-muted p-1">{items.address}</span>
               <br />
               <span
                 className="fa fa-phone fa-fw text-muted mr-3"
@@ -67,7 +66,7 @@ const Contacts = () => {
                 title="Phone number"
                 data-original-title={items.phone}
               ></span>
-              <span className="text-muted small">{items.phone}</span>
+              <span className="text-muted small p-1">{items.phone}</span>
               <br />
               <span
                 className="fa fa-envelope fa-fw text-muted mr-3"
@@ -75,7 +74,7 @@ const Contacts = () => {
                 data-original-title=""
                 title=""
               ></span>
-              <span className="text-muted small text-truncate">
+              <span className="text-muted small text-truncate p-1">
                 {items.email}
               </span>
             </div>

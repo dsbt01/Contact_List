@@ -24,7 +24,9 @@ export const AllContacts = () => {
           </div>
         </div>
       </div>
-      <Contacts />
+      <ul className="list-group">
+        <Contacts />
+      </ul>
     </div>
   );
 };
