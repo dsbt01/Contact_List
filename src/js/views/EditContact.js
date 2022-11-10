@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
-export const AddContact = () => {
+export const EditContact = () => {
   const [fullNameValue, setFullNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [phoneValue, setPhoneValue] = useState("");
@@ -11,6 +11,8 @@ export const AddContact = () => {
   const [idValue, setIdValue] = useState("");
 
   const { store, actions } = useContext(Context);
+
+  const params = useParams();
 
   const updateContact = async () => {
     const updatedContact = {
@@ -26,6 +28,23 @@ export const AddContact = () => {
 
     alert("Contact has been saved successfully");
   };
+
+  const loadScreen = () => {
+    var locContacts = store.contacts;
+
+    for (var i = 0; i < locContacts.length; i) {
+      if (locContacts[i].id === params.theid) {
+        setIdValue(locContacts[i].id);
+        setFullNameValue(locContacts[i].full_name);
+        setEmailValue(locContacts[i].email);
+        setPhoneValue(locContacts[i].phone);
+        setAddressValue(locContacts[i].address);
+        break;
+      }
+    }
+  };
+
+  loadScreen();
 
   return (
     <div className="container">
