@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
@@ -15,6 +15,10 @@ const Contacts = () => {
       </div>
     );
   } else {
+    useEffect(async () => {
+      var q = await actions.refreshData();
+    }, []);
+
     return locContacts.map((items, index) => {
       async function deleteContact(id) {
         var q = await actions.deleteContact(id);

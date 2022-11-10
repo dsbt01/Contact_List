@@ -29,7 +29,7 @@ export const EditContact = () => {
     alert("Contact has been saved successfully");
   };
 
-  const loadScreen = () => {
+  const RefreshData = () => {
     var locContacts = store.contacts;
 
     for (var i = 0; i < locContacts.length; i) {
@@ -44,7 +44,9 @@ export const EditContact = () => {
     }
   };
 
-  loadScreen();
+  useEffect(() => {
+    RefreshData();
+  }, []);
 
   return (
     <div className="container">
