@@ -82,6 +82,17 @@ const getState = ({ getStore, getActions, setStore }) => {
       contacts: [{}],
     },
     actions: {
+      updateContact: async (data) => {
+        console.log(
+          "🚀 ~ file: flux.js ~ line 86 ~ updateContact: ~ data",
+          data
+        );
+
+        const store = getStore();
+        var resp = await putData(baseUrl + data.id, data);
+
+        getActions().refreshData();
+      },
       deleteContact: async (data) => {
         const store = getStore();
         var resp = await deleteData(baseUrl + data, data);
